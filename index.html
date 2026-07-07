@@ -56,15 +56,16 @@
     </section>
 
     <section id="habilidades">
-        
+
         <h2>Habilidades e Tecnologias</h2>
 
         <table>
+
             <head>
                 <tr>
-                     <th>Tecnologia</th>
-                     <th>Nível</th>
-                     <th>Descrição</th>
+                    <th>Tecnologia</th>
+                    <th>Nível</th>
+                    <th>Descrição</th>
                 </tr>
             </head>
             <tbody>
@@ -94,11 +95,11 @@
         </p>
 
         <section id="contato">
-            
+
             <h2>Contato</h2>
             <p>Tem um projeto em mente? Entre em contato.</p>
 
-            <form action="">
+            <form action="" id="form" name="form">
 
                 <label for="nome">Nome: </label>
                 <input type="text" id="nome" name="nome" required> <br>
@@ -109,6 +110,9 @@
                 <label for="telefone">Telefone: </label>
                 <input type="tel" id="telefone" name="telefone"> <br>
 
+                <label for="idade">Idade: </label>
+                <input type="age" id="idade" name="idade"> <br>
+
                 <label for="assunto">Assunto: </label>
                 <select name="assunto" id="assunto">
                     <option value="orcamento">Orçamento</option>
@@ -117,8 +121,20 @@
                 </select>
                 <br>
 
+                <label for="materia">Matéria: </label>
+                <select name="materia" id="materia">
+                    <option value="matematica">Matemática</option>
+                    <option value="portugues">Português</option>
+                    <option value="biologia">Biologia</option>
+                </select>
+                <br>
+
                 <label for="mensagem">Mensagem: </label>
                 <textarea name="mensagem" id="mensagem" cols="20" rows="1"></textarea>
+                <br>
+
+                <label for="descricao">Descrição sobre si: </label>
+                <textarea name="descricao" id="descricao" cols="20" rows="1"></textarea>
                 <br>
 
                 <input type="checkbox" id="inscricao" name="inscricao">
@@ -131,7 +147,7 @@
             </form>
 
 
-<br>
+            <br>
 
             <address>
                 E-mail: <a href="mailto:abcde">abcde</a> <br>

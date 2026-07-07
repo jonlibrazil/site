@@ -1,0 +1,27 @@
+/* Outros Seletores: (+, ~, >, espaço)  */
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+p {
+    color: blue;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+div {
+    height: 200px;
+    color: black;
+    background-color: bisque;
+}
+
+p~a {
+    font-weight: bold;
+    color: red;
+}
+
+p>a {
+    font-weight: bold;
+    color: burlywood;
+}
