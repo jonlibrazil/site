@@ -1,52 +1,207 @@
 /* Outros Seletores: (+, ~, >, espaço)  */
+/* padding, margin e border são as caixas! */
+/* Display: Block, Inline, Inline-block
+Block: ocupam linha inteira na Página, quebra de página automática: div, article, p, h1. 
+Inline: Lado a lado mesma linha: */
+
+body {
+    padding: 20px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
 
 * {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.header {
+    background-color: yellow;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    padding: 8px;
+    margin-bottom: 20px;
+    /* margin: 0px; */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto 1fr;
+}
+
+.container2 {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+}
+
+.container3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr;
+    margin-bottom: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.container3 >p {
+    border: 2px solid black;
+    padding: 10px;
+}
+
+#cabecalho {
+    grid-column: 1 / -1;
+}
+
+#menu {
+    grid-column: 1 / -1;
+}
+
+#rodape {
+    grid-column: 1 / -1;
+}
+
+.header2 {
+    grid-column: 1 / -1;
+    background-color: rgb(188, 157, 193);
+    padding: 20px;
+}
+
+.sidebar {
+    background-color: rgb(121, 95, 126);
+    padding: 20px;
+}
+
+.content {
+    background-color: rgb(66, 47, 69);
+    padding: 20px;
+}
+
+.relativo {
+    position: relative;
+    height: 100px;
+}
+
+.absoluto {
+    position: absolute; 
+    height: 50px;
+    background-color: brown;
+    bottom: 0px;
+    right: 0px;
+    width: 300px;
+}
+
+.fixed {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* a {
+    /* margin: 10px; */
+/*} */
+
 p {
-    color: blue;
+    /* color: blue; */
     font-family: Arial, Helvetica, sans-serif;
+    /* margin: 10px;
+    padding: 10px; */
+    /* border: 2px solid black;
+    border-radius: 10px; */
+}  
+
+
+.inline {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.block {
+    display: block;
 }
 
 
 div {
-    height: 200px;
+    /* height: 200px; */
     /* width: 600px; */
-    /* border-radius: 10px; */
-    text-align: center;
-    padding: 10px;
+    /* text-align: center; */
+    /* margin: 10px; */
+    /* padding: 10px; */
     background-color: bisque;
+    border-radius: 10px;
 }
 
 div a {
-    height: 200px;
+    /* height: 200px; */
     color: white;
     background-color: black;
 }
 
 div>p {
-    height: 200px;
     color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 p~a {
     font-weight: bold;
     color: red;
+    display: inline-block;
+    margin-top: 8px;
+    /* margin-bottom: 100px; */
 }
 
-p>a {
+/* p>a {
     font-weight: bold;
     color: burlywood;
-}
+} */
 
-.artigo1 >p{
+.artigo1>p {
     color: chartreuse;
     font-size: x-large;
 }
 
-#artigo2 >p{
+#artigo2>p {
     color: chocolate;
     font-size: small;
+}
+
+.displayblock {
+    display: block;
+    height: 150px;
+    background-color: black;
+    color: white;
+    border: 3px solid red;
+}
+
+.displayinline {
+    display: inline;
+    background-color: rgb(64, 135, 33);
+    color: white;
+    border: 3px solid blue;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+.displayinline-block {
+    display: inline-block;
+    /* height: 150px; */
+    background-color: yellow;
+    color: black;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 2px;
+    margin-top: 16px;
+    width: 500px;
+}
+
+.imagemflutuante {
+    float: left;
+    height: 170px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    clear: both;
 }
