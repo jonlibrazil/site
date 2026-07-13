@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Configura a página para ser responsiva-->
+    <title>Aula Javascript</title>
+    <!-- <link rel="stylesheet" href="style3.css"> -->
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="styletest.css">
+
+</head>
+
+<body>
+    <section class="content"> 
+        <h1>Trocando de cor as divs</h1>
+        <button id="botaoTrocaCor" onclick="trocaCor()">Trocar de cor</button>
+        <button id="botaoRetornaCor" onclick="retornaCor()">Retornar ao padrão de cor</button>
+
+        <div id="div-1" class="divTrocaCor">Div 1</div>
+        <div id="div-2" class="divTrocaCor">Div 2</div>
+        <div id="div-3" class="divTrocaCor">Div 3</div>
+
+    </section>
+
+    <br><br>
+
+    <section class="content">
+        <h1>Calculadora básica</h1>
+        <p>Operadores válidos: +, -, *, /</p>
+        <input type="text" id="num1" placeholder="Primeiro número">
+        <input type="text" id="num2" placeholder="Segundo número">
+        <input type="text" id="operador" placeholder="Operador">
+        <button onclick="efetuaOperacao()">Efetuar operação</button>
+        <p id="resultado"></p>
+    </section>
+
+    <br><br>
+
+    <!-- treinando -->
+    <section class="content">
+        <h1>Tradutor de idiomas</h1>
+        <label for="idioma">Escolha o idioma</label>
+        <select id="idioma">
+            <option value=""></option>
+            <option value="pt">Português</option>
+            <option value="en">Inglês</option>
+            <option value="es">Espanhol</option>
+            <option value="fr">Francês</option>
+
+    
+        </select>
+        
+        
+        
+        
+        <button onclick="traduzirTexto()">Traduzir</button>
+        
+        <p id="textoIdioma"></p>
+
+        <p id="textoTraducao"></p>
+    </section>
+
+
+
+</body>
