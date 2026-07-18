@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Configura a página para ser responsiva-->
+    <title>Aula 26 JS</title>
+    <!-- <link rel="stylesheet" href="style3.css"> --> 
+    <script src="scriptA26.js" defer></script>   
+        <!-- defer - para fazer o script ser lido depois de carregar a pagina html -->
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* height: 100vh; */
+            font-family: sans-serif;
+            gap: 25px;
+        }
+        .tabuleiro{
+            display: grid;
+            grid-template-columns: repeat(3,100px);
+            gap: 10px;
+        }
+        .celula{
+            display: flex;
+            background-color: #dcd1d1;
+            width: 100px;
+            height: 100px;
+            justify-content: center;
+            align-items: center;
+            font-size: 46px;
+            cursor: pointer;
+        }
+        #botaoReiniciar{
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JOGO DA VELHA</h1>
+    <div id="tabuleiro-jogo" class="tabuleiro">
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+        <button class="celula"></button>
+
+
+
+    </div>
+    <button id="botaoReiniciar">Reiniciar o jogo</button>
+
+    <br><br><br>
+
+    <h1>Lista de tarefas</h1>
+    <label for="">Digite uma tarefa</label>
+    <input type="text" id="campoTarefa" placeholder="Digite a tarefa">
+    <button id="btnAdicionar">Adicionar à lista</button>
+    <ul id="listaTarefas"></ul>
+    
+
+</body>
+</html>

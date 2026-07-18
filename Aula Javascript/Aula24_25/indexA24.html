@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Configura a página para ser responsiva-->
+    <title>Aula 24 JS</title>
+    <!-- <link rel="stylesheet" href="style3.css"> --> 
+    <script src="scriptA24.js" defer></script>   
+        <!-- defer - para fazer o script ser lido depois de carregar a pagina html -->
+    <style>
+        label,button{
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Saudação Personalizada</h1>  
+    <label for="nome">Digite seu nome:</label><input type="text" id="nome">
+    <label for="hora">Selecione a hora:</label>
+    <select name="" id="hora">
+        <option value="">Selecione</option>
+        <option value="8">Manhã</option>
+        <option value="14">Tarde</option>
+        <option value="20">Noite</option>
+    </select>
+    <button onclick="mostraSaudacao()">Mostrar saudação</button>
+    <p id="mensagem"></p>
+
+
+    <h1>Escolha a cor de fundo ou interaja de outras formas</h1>
+    <button id="redButton">Vermelho</button>
+    <button id="greenButton">Verde</button>
+    <button id="blueButton">Azul</button>
+
+
+
+</body>
+</html>

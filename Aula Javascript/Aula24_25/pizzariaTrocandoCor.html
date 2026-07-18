@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Configura a página para ser responsiva-->
+    <title>Aula 25 JS</title>
+    <!-- <link rel="stylesheet" href="style3.css"> --> 
+    <script src="scriptA25.js" defer></script>   
+        <!-- defer - para fazer o script ser lido depois de carregar a pagina html -->
+    <style>
+        button{
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        input{
+            margin-top: 20px;
+            padding: 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <h1>Escolha a cor de fundo ou interaja de outras formas</h1>
+    <button id="redButton">Vermelho</button>
+    <button id="greenButton">Verde</button>
+    <button id="blueButton">Azul</button>
+    <input 
+    type="text" 
+    id="inputBox" 
+    placeholder="Pressionar uma tecla"
+    size="20"
+    />
+
+    <div id="resultadoTeclado"></div>
+
+    <br><br><br>
+
+    <div id="pizzaria" style=
+    "border: 1px solid rgba(0, 0, 0, 0.225);
+    font-family: sans-serif;
+    background-color: rgba(228, 221, 221); 
+    border-radius: 10px; 
+    width: fit-content;
+    padding: 25px;">
+    <label for="">Peça sua Pizza: </label>
+    <!-- <input type="text" id="clientePedido"> -->
+    <select name="" id="saborPizza" style="padding: 10px; border-radius: 5px;">
+        <option value="">Selecione</option>
+        <option value="1">Calabresa</option>
+        <option value="2">Frango</option>
+        <option value="3">Mussarela</option>
+    </select>
+    <button onclick="clientePedido()">Fazer pedido</button>
+    <p id="mensagemPizzaria"></p>
+    
+    
+    </div>
+
+
+
+</body>
+</html>
