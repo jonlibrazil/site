@@ -31,7 +31,7 @@ class Mesa {
             htmlConteudo += `
                 <li style="margin-bottom: 8px; text-decoration: ${item.concluido ? 'line-through' : 'none'}">
                     • ${item.nome} - <strong>${item.concluido ? '✓ Pronto' : '⏳ Preparando'}</strong>
-                    <button onclick="todasAsMesas.find(m => m.numero == ${this.numero}).alternarItem(${index})" style="margin-left: 10px; padding: 2px 5px; font-size: 11px;">
+                    <button onclick="mudarStatusItemDoPainel(${this.numero},${index})" style="margin-left: 10px; padding: 2px 5px; font-size: 11px;">
                         ${item.concluido ? 'Reabrir Item' : 'Concluir Item'}
                     </button>
                 </li>
@@ -113,6 +113,14 @@ function atualizarPainel() {
     todasAsMesas.forEach(mesa => {
         mesa.renderizarHtml();
     });
+}
+
+// Função tradicional na raiz do arquivo que serve de ponte para o Safari
+function mudarStatusItemDoPainel(numeroMesa, indexItem) {
+    const mesaEncontrada = todasAsMesas.find(m => m.numero == numeroMesa);
+    if (mesaEncontrada) {
+        mesaEncontrada.alternarItem(indexItem);
+    }
 }
 
 function adicionarNovaMesa() {
