@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Configura a página para ser responsiva-->
+    <title>Pedido Pitangueiras</title>
+    <!-- <link rel="stylesheet" href="style.css"> --> 
+    <script src="script.js" defer></script>   
+        <!-- defer - para fazer o script ser lido depois de carregar a pagina html -->
+    <!-- <style>
+        
+    </style> -->
+</head>
+
+
+<body>
+    <h1>Painel do Restaurante</h1>            
+    
+    <div style="background-color: #f1f1f1; padding: 15px; width: fit-content; border-radius: 5px; margin-bottom: 20px;">
+        <h3>Abrir Nova Mesa</h3>
+        <label for="numMesa">Número da Mesa:</label>
+        <input type="number" id="numMesa" placeholder="Ex: 5" style="margin-bottom: 10px; display: block; padding: 5px;" />
+        
+        <label for="txtPedido">Primeiro Pedido:</label>
+        <input type="text" id="txtPedido" placeholder="Ex: Pizza" style="margin-bottom: 10px; display: block; padding: 5px; width: 250px;" />
+        
+        <button onclick="adicionarNovaMesa()">Cadastrar Mesa</button>
+    </div>
+
+    <div id="painelMesas"></div>
+
+    <script src="scriptRestaurante.js" defer></script>
+</body>
