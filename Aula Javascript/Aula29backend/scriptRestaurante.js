@@ -12,10 +12,10 @@ class Mesa {
     renderizarHtml = () => {
         const cartao = document.createElement('div');
         cartao.style.border = '1px solid #ccc';
-        cartao.style.padding = '15px';
+        cartao.style.padding = '20px';
         cartao.style.width = 'fit-content';
         cartao.style.margin = '10px 0';
-        cartao.style.borderRadius = '5px';
+        cartao.style.borderRadius = '15px';
         cartao.style.backgroundColor = this.atendida ? '#d4edda' : '#f8d7da';
 
         // 1. Monta o cabeçalho do cartão da mesa
@@ -47,8 +47,9 @@ class Mesa {
         divEditar.style.borderTop = '1px dashed #bbb';
         divEditar.style.paddingTop = '10px';
 
-        const inputNovoItem = document.createElement('input');
-        inputNovoItem.type = 'text';
+        const inputNovoItem = document.createElement('textarea');
+        // const inputNovoItem = document.createElement('input');
+        // inputNovoItem.type = 'text';
         inputNovoItem.placeholder = 'Acrescentar novo item...';
         inputNovoItem.style.padding = '4px';
 
@@ -58,7 +59,17 @@ class Mesa {
         
         btnAcrescentar.addEventListener('click', () => {
             if (inputNovoItem.value.trim() === '') return;
-            this.adicionarNovoItem(inputNovoItem.value);
+            // this.adicionarNovoItem(inputNovoItem.value);
+            // Quebra o texto digitado linha por linha
+            const novasLinhas = inputNovoItem.value.split('\n');
+
+            // Varre cada linha e adiciona individualmente na mesa
+            novasLinhas.forEach(linha => {
+                if (linha.trim() !== '') {
+                    this.adicionarNovoItem(linha);
+                }
+            });
+            inputNovoItem.value = ''; // Limpa a caixa após adicionar       
         });
 
         divEditar.appendChild(inputNovoItem);
@@ -99,7 +110,7 @@ class Mesa {
 
 function atualizarPainel() {
     painelMesas.innerHTML = '';
-    todasAsMesas.reverse().forEach(mesa => {
+    todasAsMesas.forEach(mesa => {
         mesa.renderizarHtml();
     });
 }
@@ -113,8 +124,24 @@ function adicionarNovaMesa() {
         return;
     }
 
-    const novaMesa = new Mesa(inputNumero.value, inputPedido.value);
-    todasAsMesas.push(novaMesa);
+    // 1. Pega o texto do textarea e quebra ele linha por linha em um array
+    const linhasDigitadas = inputPedido.value.split('\n');
+
+    // 2. Filtra para remover linhas vazias acidentais que o garçom possa ter deixado
+    const itensFiltrados = linhasDigitadas.filter(item => item.trim() !== '');
+
+    // 3. Cria a nova mesa pegando o PRIMEIRO item da lista
+    const novaMesa = new Mesa(inputNumero.value, itensFiltrados[0]);
+
+    // 4. Se o garçom digitou mais de um item (pulou linhas), adiciona os outros no objeto
+    if (itensFiltrados.length > 1) {
+        for (let i = 1; i < itensFiltrados.length; i++) {
+            novaMesa.pedidos.push({ nome: itensFiltrados[i], concluido: false });
+        }
+    }
+
+    // const novaMesa = new Mesa(inputNumero.value, inputPedido.value);
+    todasAsMesas.unshift(novaMesa);
     atualizarPainel();
 
     inputNumero.value = '';
